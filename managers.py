@@ -13,9 +13,9 @@ class ActorManager:
         )
         return [Actor(*row) for row in actors_data_cursor]
 
-    def create(self, first_name_: str, last_name_: str):
+    def create(self, first_name: str, last_name: str):
         self._connection.execute(
-            f"INSERT INTO {self.table_name} (first_name, last_name) VALUES (?, ?)", (first_name_, last_name_,)
+            f"INSERT INTO {self.table_name} (first_name, last_name) VALUES (?, ?)", (first_name, last_name,)
         )
         self._connection.commit()
 
